@@ -22,9 +22,32 @@ export const YLogoImg = styled.img`
 
 export const ContentWrapper = styled.div`
   max-width: 720px;
+  text-align: center;
 `;
 
 export const NameText = styled.div`
   color: #ffffff;
   font-size: 38px;
+`;
+
+export const SkillsText = styled.div`
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+`;
+
+export const MessageText = styled.div`
+  color: #ffffff;
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+`;
+
+export const ContactButton = styled.span`
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 15px 20px;
+  margin-top: 20px;
+  cursor: pointer;
 `;
