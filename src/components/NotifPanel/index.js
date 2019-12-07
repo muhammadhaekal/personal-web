@@ -10,20 +10,10 @@ import {
 } from "./styled";
 
 class NotifPanel extends Component {
-  state = {
-    isHidden: false
-  };
-
-  hideNotifPanel = () => {
-    this.setState({
-      isHidden: true
-    });
-  };
-
   render() {
-    const { isHidden } = this.state;
+    const { isNotifHidden, hideNotifPanel } = this.props;
     return (
-      <Wrapper isHidden={isHidden}>
+      <Wrapper isHidden={isNotifHidden}>
         <CenterDiv>
           <ContentContainer>
             <TextContainer>
@@ -44,7 +34,7 @@ class NotifPanel extends Component {
             </TextContainer>
             <NotifPanelButton
               onClick={() => {
-                this.hideNotifPanel();
+                hideNotifPanel();
               }}
             >
               <PanelButtonText>Got it</PanelButtonText>
