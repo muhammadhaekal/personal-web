@@ -27,7 +27,7 @@ export const NotifPanelButton = styled.div`
   background-color: #007bc1;
   display: flex;
   border-radius: 3px;
-  margin-left: 17px;
+  margin-left: 25px;
   cursor: pointer;
 `;
 

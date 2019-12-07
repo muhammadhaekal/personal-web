@@ -33,11 +33,11 @@ class NotifPanel extends Component {
                 Cookie Policy
               </NotifPanelLink>
               ,{" "}
-              <NotifPanelLink href="https://www.cermati.com/pages/privacy-policys">
+              <NotifPanelLink href="https://www.cermati.com/pages/privacy-policy">
                 Privacy Policy
               </NotifPanelLink>
               , and our{" "}
-              <NotifPanelLink href="https://www.cermati.com/pages/privacy-policys">
+              <NotifPanelLink href="https://www.cermati.com/pages/privacy-policy">
                 Terms of Service
               </NotifPanelLink>
               .
