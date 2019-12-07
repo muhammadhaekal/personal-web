@@ -1,11 +1,12 @@
 import React from "react";
 import NotifPanel from "../../components/NotifPanel";
+import { Wrapper } from "./styled";
 
 const LandingPage = () => {
   return (
-    <div>
+    <Wrapper>
       <NotifPanel></NotifPanel>
-    </div>
+    </Wrapper>
   );
 };
 

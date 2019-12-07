@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import { keyframes, css } from "styled-components";
 
-export const Wrapper = styled.div`
+export const CenterDiv = styled.div`
   background-color: #e5e5e5;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+  padding: 14px 0;
+  width: 100%;
+  max-width: 1366px;
 `;
 
 export const ContentContainer = styled.div`
@@ -15,7 +18,7 @@ export const ContentContainer = styled.div`
 export const TextContainer = styled.div`
   text-align: left;
   font-size: 16px;
-  color: #868686;
+  color: rgb(102, 102, 102);
 `;
 
 export const NotifPanelButton = styled.div`
@@ -35,4 +38,28 @@ export const PanelButtonText = styled.div`
 
 export const NotifPanelLink = styled.a`
   text-decoration: none;
+`;
+
+const disapear = keyframes`
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: -66px;
+  }
+`;
+
+export const Wrapper = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  top: 0;
+  ${props => props.isHidden && disapearAnimation}
+`;
+
+const disapearAnimation = css`
+  animation: ${disapear} 1s;
+  animation-fill-mode: forwards;
 `;
