@@ -14,6 +14,8 @@ export const ContentContainer = styled.div`
 
 export const TextContainer = styled.div`
   text-align: left;
+  font-size: 16px;
+  color: #868686;
 `;
 
 export const NotifPanelButton = styled.div`
@@ -22,10 +24,15 @@ export const NotifPanelButton = styled.div`
   background-color: #007bc1;
   display: flex;
   border-radius: 3px;
-  margin-left: 14px;
+  margin-left: 17px;
+  cursor: pointer;
 `;
 
 export const PanelButtonText = styled.div`
   align-self: center;
   color: #ffffff;
+`;
+
+export const NotifPanelLink = styled.a`
+  text-decoration: none;
 `;

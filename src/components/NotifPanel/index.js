@@ -4,7 +4,8 @@ import {
   ContentContainer,
   TextContainer,
   NotifPanelButton,
-  PanelButtonText
+  PanelButtonText,
+  NotifPanelLink
 } from "./styled";
 
 const NotifPanel = () => {
@@ -13,8 +14,19 @@ const NotifPanel = () => {
       <ContentContainer>
         <TextContainer>
           By accessing and using this website, you acknowledge that you have
-          read and understand our Cookie Policy, Privacy Policy, and our Terms
-          of Service.
+          read and understand our{" "}
+          <NotifPanelLink href="https://www.cermati.com/pages/privacy-policy">
+            Cookie Policy
+          </NotifPanelLink>
+          ,{" "}
+          <NotifPanelLink href="https://www.cermati.com/pages/privacy-policys">
+            Privacy Policy
+          </NotifPanelLink>
+          , and our{" "}
+          <NotifPanelLink href="https://www.cermati.com/pages/privacy-policys">
+            Terms of Service
+          </NotifPanelLink>
+          .
         </TextContainer>
         <NotifPanelButton>
           <PanelButtonText>Got it</PanelButtonText>
