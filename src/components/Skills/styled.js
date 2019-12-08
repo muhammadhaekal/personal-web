@@ -25,7 +25,7 @@ export const SmallText = styled.div`
 `;
 
 export const SkillsContainer = styled.div`
-  padding: 0 20px 30px 20px;
+  padding: 0 20px 40px 20px;
   display: grid;
   grid-template-columns: auto auto auto;
   column-gap: 20px;
