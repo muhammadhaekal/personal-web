@@ -50,4 +50,9 @@ export const ContactButton = styled.span`
   padding: 15px 20px;
   margin-top: 20px;
   cursor: pointer;
+  border-radius: 3px;
+  &:hover {
+    color: #004a75;
+    background-color: #ffffff;
+  }
 `;
