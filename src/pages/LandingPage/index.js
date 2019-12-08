@@ -4,6 +4,7 @@ import { Wrapper, CenterDiv } from "./styled";
 import Jumbotron from "../../components/Jumbotron";
 import MainContent from "../../components/Skills";
 import PageFooter from "../../components/PageFooter";
+import Newsletter from "../../components/Newsletter";
 class LandingPage extends Component {
   state = {
     isNotifHidden: false
@@ -29,6 +30,7 @@ class LandingPage extends Component {
           <MainContent></MainContent>
           <PageFooter></PageFooter>
         </CenterDiv>
+        <Newsletter></Newsletter>
       </Wrapper>
     );
   }
