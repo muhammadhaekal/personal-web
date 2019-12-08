@@ -36,10 +36,11 @@ class Newsletter extends Component {
   };
 
   setPanelSlideUpTimeout = () => {
-    if (localStorage.getItem("panelShowTime")) {
+    const panelShowTimeString = localStorage.getItem("panelShowTime");
+
+    if (panelShowTimeString) {
       const currDate = new Date().getTime();
-      const cuntdownDuration =
-        Number(localStorage.getItem("panelShowTime")) - currDate;
+      const cuntdownDuration = Number(panelShowTimeString) - currDate;
 
       setTimeout(() => {
         this.showNewsletterPanel();
