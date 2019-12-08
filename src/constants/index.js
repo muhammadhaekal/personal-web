@@ -36,3 +36,5 @@ export const skills = [
     class: "fas fa-chart-line"
   }
 ];
+
+export const TEN_MINUTES_IN_MILISEC = 600000;

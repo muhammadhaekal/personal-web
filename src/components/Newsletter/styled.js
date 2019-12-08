@@ -24,8 +24,23 @@ const disapear = keyframes`
   }
 `;
 
+const slideUp = keyframes`
+  0% {
+    bottom: -170px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+`;
+
 const disapearAnimation = css`
   animation: ${disapear} 1s;
+  animation-fill-mode: forwards;
+`;
+
+const slideUpAnimation = css`
+  animation: ${slideUp} 1s;
   animation-fill-mode: forwards;
 `;
 
@@ -36,7 +51,10 @@ export const NewsletterCard = styled.div`
   padding: 20px;
   max-width: 640px;
   position: relative;
-  ${props => props.isHidden && disapearAnimation}
+  bottom: -170px;
+
+  ${props => props.isHidden === true && disapearAnimation}
+  ${props => props.isHidden === false && slideUpAnimation}
 `;
 
 export const NewsletterTitle = styled.div`

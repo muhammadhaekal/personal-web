@@ -10,13 +10,20 @@ import {
   InputEmail,
   SubscribeButton
 } from "./styled";
+import { TEN_MINUTES_IN_MILISEC } from "../../constants";
 
 class Newsletter extends Component {
   state = {
-    isHidden: false
+    isHidden: null
   };
 
   hideNewsletterPanel = () => {
+    const currDate = new Date().getTime();
+    const panelShowTime = currDate + TEN_MINUTES_IN_MILISEC;
+
+    localStorage.setItem("panelShowTime", panelShowTime);
+    this.setPanelSlideUpTimeout();
+
     this.setState({
       isHidden: true
     });
@@ -25,6 +32,36 @@ class Newsletter extends Component {
   showNewsletterPanel = () => {
     this.setState({
       isHidden: false
+    });
+  };
+
+  setPanelSlideUpTimeout = () => {
+    if (localStorage.getItem("panelShowTime")) {
+      const currDate = new Date().getTime();
+      const cuntdownDuration =
+        Number(localStorage.getItem("panelShowTime")) - currDate;
+
+      setTimeout(() => {
+        this.showNewsletterPanel();
+      }, cuntdownDuration);
+    }
+  };
+
+  componentDidMount = () => {
+    this.setPanelSlideUpTimeout();
+    this.setScrollListener();
+  };
+
+  setScrollListener = () => {
+    window.addEventListener("scroll", e => {
+      const scrollPosition = window.scrollY;
+
+      if (
+        scrollPosition >= (1 / 3) * window.screen.height &&
+        !localStorage.getItem("panelShowTime")
+      ) {
+        this.showNewsletterPanel();
+      }
     });
   };
 
