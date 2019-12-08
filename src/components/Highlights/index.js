@@ -24,12 +24,12 @@ const Highlights = () => {
         </SmallText>
       </HeaderContainer>
       <SkillsContainer>
-        {skills.map(skill => (
-          <SkillCard>
+        {skills.map((skill, i) => (
+          <SkillCard key={i}>
             <CardHeader>
               {skill.name}
               <IconWrapper>
-                <i class={skill.class}></i>
+                <i className={skill.class}></i>
               </IconWrapper>
             </CardHeader>
             <SkillDescription>{skill.description}</SkillDescription>
