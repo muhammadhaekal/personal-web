@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { keyframes, css } from "styled-components";
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -13,6 +14,21 @@ export const CenterDiv = styled.div`
   max-width: 1366px;
 `;
 
+const disapear = keyframes`
+  0% {
+    bottom: 0;
+  }
+
+  100% {
+    bottom: -170px;
+  }
+`;
+
+const disapearAnimation = css`
+  animation: ${disapear} 1s;
+  animation-fill-mode: forwards;
+`;
+
 export const NewsletterCard = styled.div`
   margin: 0;
   background-color: rgb(0, 123, 193, 0.9);
@@ -20,6 +36,7 @@ export const NewsletterCard = styled.div`
   padding: 20px;
   max-width: 640px;
   position: relative;
+  ${props => props.isHidden && disapearAnimation}
 `;
 
 export const NewsletterTitle = styled.div`
@@ -54,6 +71,8 @@ export const InputEmail = styled.input`
   width: 100%;
   margin-right: 10px;
   border: none;
+  height: 20px;
+  box-sizing: border-box;
 `;
 
 export const SubscribeButton = styled.div`
