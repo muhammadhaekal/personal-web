@@ -23,6 +23,10 @@ export const YLogoImg = styled.img`
 export const ContentWrapper = styled.div`
   max-width: 720px;
   text-align: center;
+  @media (max-width: 425px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 `;
 
 export const NameText = styled.div`

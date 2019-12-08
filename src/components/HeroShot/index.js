@@ -10,7 +10,7 @@ import {
 } from "./styled";
 import yLogoImgSrc from "../../img/y-logo.png";
 
-const Jumbotron = () => {
+const HeroShot = () => {
   return (
     <Wrapper>
       <YLogoImg src={yLogoImgSrc}></YLogoImg>
@@ -27,4 +27,4 @@ const Jumbotron = () => {
   );
 };
 
-export default Jumbotron;
+export default HeroShot;
