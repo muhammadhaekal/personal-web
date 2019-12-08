@@ -3,7 +3,7 @@ import NotifPanel from "../../components/NotifPanel";
 import { Wrapper, CenterDiv } from "./styled";
 import Jumbotron from "../../components/Jumbotron";
 import MainContent from "../../components/Skills";
-
+import PageFooter from "../../components/PageFooter";
 class LandingPage extends Component {
   state = {
     isNotifHidden: false
@@ -27,6 +27,7 @@ class LandingPage extends Component {
         <CenterDiv isNotifHidden={isNotifHidden}>
           <Jumbotron></Jumbotron>
           <MainContent></MainContent>
+          <PageFooter></PageFooter>
         </CenterDiv>
       </Wrapper>
     );

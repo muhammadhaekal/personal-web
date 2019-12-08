@@ -13,6 +13,7 @@ export const CenterDiv = styled.div`
 export const ContentContainer = styled.div`
   max-width: 720px;
   display: flex;
+  text-align: center;
 `;
 
 export const TextContainer = styled.div`
