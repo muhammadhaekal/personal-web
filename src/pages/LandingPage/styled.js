@@ -25,6 +25,6 @@ export const CenterDiv = styled.div`
   max-width: 1366px;
   width: 100%;
   padding-top: 66px;
-
+  z-index: 0;
   ${props => props.isNotifHidden && disapearAnimation}
 `;

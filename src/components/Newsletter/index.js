@@ -22,6 +22,12 @@ class Newsletter extends Component {
     });
   };
 
+  showNewsletterPanel = () => {
+    this.setState({
+      isHidden: false
+    });
+  };
+
   render() {
     const { isHidden } = this.state;
 

@@ -57,6 +57,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   top: 0;
+  z-index: 2;
   ${props => props.isHidden && disapearAnimation}
 `;
 
