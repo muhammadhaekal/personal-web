@@ -14,6 +14,12 @@ export const ContentContainer = styled.div`
   max-width: 720px;
   display: flex;
   text-align: center;
+  @media (max-width: 425px) {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: start;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -30,6 +36,11 @@ export const NotifPanelButton = styled.div`
   border-radius: 3px;
   margin-left: 25px;
   cursor: pointer;
+  @media (max-width: 425px) {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 15px;
+  }
 `;
 
 export const PanelButtonText = styled.div`
@@ -51,6 +62,26 @@ const disapear = keyframes`
   }
 `;
 
+const disapear425 = keyframes`
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: -123px;
+  }
+`;
+
+const disapear375 = keyframes`
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: -142px;
+  }
+`;
+
 export const Wrapper = styled.div`
   position: fixed;
   display: flex;
@@ -64,4 +95,12 @@ export const Wrapper = styled.div`
 const disapearAnimation = css`
   animation: ${disapear} 1s;
   animation-fill-mode: forwards;
+  @media (max-width: 425px) {
+    animation: ${disapear425} 1s;
+    animation-fill-mode: forwards;
+  }
+  @media (max-width: 375px) {
+    animation: ${disapear375} 1s;
+    animation-fill-mode: forwards;
+  }
 `;

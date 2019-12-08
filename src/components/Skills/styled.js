@@ -30,6 +30,12 @@ export const SkillsContainer = styled.div`
   grid-template-columns: auto auto auto;
   column-gap: 20px;
   row-gap: 15px;
+  @media (max-width: 960px) and (min-width: 481px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: auto;
+  }
 `;
 
 export const SkillCard = styled.div`
