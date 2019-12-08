@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import NotifPanel from "../../components/NotifPanel";
 import { Wrapper, CenterDiv } from "./styled";
-import Jumbotron from "../../components/Jumbotron";
-import MainContent from "../../components/Skills";
+import HeroShot from "../../components/HeroShot";
+import MainContent from "../../components/Highlights";
 import PageFooter from "../../components/PageFooter";
 import Newsletter from "../../components/Newsletter";
 class LandingPage extends Component {
@@ -26,7 +26,7 @@ class LandingPage extends Component {
           isNotifHidden={isNotifHidden}
         ></NotifPanel>
         <CenterDiv isNotifHidden={isNotifHidden}>
-          <Jumbotron></Jumbotron>
+          <HeroShot></HeroShot>
           <MainContent></MainContent>
           <PageFooter></PageFooter>
         </CenterDiv>

@@ -7,11 +7,12 @@ import {
   SkillsContainer,
   SkillCard,
   CardHeader,
-  SkillDescription
+  SkillDescription,
+  IconWrapper
 } from "./styled";
 import { skills } from "../../constants";
 
-const MainContent = () => {
+const Highlights = () => {
   return (
     <Wrapper>
       <HeaderContainer>
@@ -27,7 +28,9 @@ const MainContent = () => {
           <SkillCard>
             <CardHeader>
               {skill.name}
-              <i class={skill.class}></i>
+              <IconWrapper>
+                <i class={skill.class}></i>
+              </IconWrapper>
             </CardHeader>
             <SkillDescription>{skill.description}</SkillDescription>
           </SkillCard>
@@ -37,4 +40,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;
+export default Highlights;

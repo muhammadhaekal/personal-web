@@ -30,17 +30,17 @@ export const SkillsContainer = styled.div`
   grid-template-columns: auto auto auto;
   column-gap: 20px;
   row-gap: 15px;
-  @media (max-width: 960px) and (min-width: 481px) {
+  @media (max-width: 960px) and (min-width: 480px) {
     grid-template-columns: auto auto;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 479px) {
     grid-template-columns: auto;
   }
 `;
 
 export const SkillCard = styled.div`
   padding: 15px;
-  border: 1px solid rgb(102, 102, 102);
+  border: 1px solid rgb(102, 102, 102, 0.5);
   color: rgb(102, 102, 102);
 `;
 
@@ -53,4 +53,10 @@ export const CardHeader = styled.div`
 export const SkillDescription = styled.div`
   margin-top: 12px;
   font-size: 15px;
+`;
+
+export const Icon = styled.i``;
+
+export const IconWrapper = styled.span`
+  color: rgb(102, 102, 102, 0.6);
 `;
