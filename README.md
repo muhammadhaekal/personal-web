@@ -1,5 +1,7 @@
 ## Simple Personal Website
 
+Live Demo: http://personal-web-hkl.netlify.com
+
 ## Tech Stack
 
 - ReactJs
