@@ -58,27 +58,7 @@ const disapear = keyframes`
   }
 
   100% {
-    top: -66px;
-  }
-`;
-
-const disapear425 = keyframes`
-  0% {
-    top: 0;
-  }
-
-  100% {
-    top: -123px;
-  }
-`;
-
-const disapear375 = keyframes`
-  0% {
-    top: 0;
-  }
-
-  100% {
-    top: -142px;
+    transform: translate(0,-100%);
   }
 `;
 
@@ -95,12 +75,4 @@ export const Wrapper = styled.div`
 const disapearAnimation = css`
   animation: ${disapear} 1s;
   animation-fill-mode: forwards;
-  @media (max-width: 425px) {
-    animation: ${disapear425} 1s;
-    animation-fill-mode: forwards;
-  }
-  @media (max-width: 375px) {
-    animation: ${disapear375} 1s;
-    animation-fill-mode: forwards;
-  }
 `;

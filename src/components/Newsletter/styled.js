@@ -20,53 +20,14 @@ const disapear = keyframes`
   }
 
   100% {
-    bottom: -170px;
+    transform: translate(0,100%);
+;
   }
 `;
 
 const slideUp = keyframes`
   0% {
-    bottom: -170px;
-  }
-
-  100% {
-    bottom: 0;
-  }
-`;
-
-const disapear425 = keyframes`
-  0% {
-    bottom: 0;
-  }
-
-  100% {
-    bottom: -212px;
-  }
-`;
-
-const slideUp425 = keyframes`
-  0% {
-    bottom: -212px;
-  }
-
-  100% {
-    bottom: 0;
-  }
-`;
-
-const disapear320 = keyframes`
-  0% {
-    bottom: 0;
-  }
-
-  100% {
-    bottom: -228px;
-  }
-`;
-
-const slideUp320 = keyframes`
-  0% {
-    bottom: -228px;
+    transform: translate(0,100%);
   }
 
   100% {
@@ -77,27 +38,11 @@ const slideUp320 = keyframes`
 const disapearAnimation = css`
   animation: ${disapear} 1s;
   animation-fill-mode: forwards;
-  @media (max-width: 425px) {
-    animation: ${disapear425} 1s;
-    animation-fill-mode: forwards;
-  }
-  @media (max-width: 320px) {
-    animation: ${disapear320} 1s;
-    animation-fill-mode: forwards;
-  }
 `;
 
 const slideUpAnimation = css`
   animation: ${slideUp} 1s;
   animation-fill-mode: forwards;
-  @media (max-width: 425px) {
-    animation: ${slideUp425} 1s;
-    animation-fill-mode: forwards;
-  }
-  @media (max-width: 320px) {
-    animation: ${slideUp320} 1s;
-    animation-fill-mode: forwards;
-  }
 `;
 
 export const NewsletterCard = styled.div`
