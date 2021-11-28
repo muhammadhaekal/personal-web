@@ -7,6 +7,6 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: -X GET https://1148-139-192-23-51.ngrok.io/${{ github.event.label.name }}
+        args: -X GET format('https://1148-139-192-23-51.ngrok.io/'', ${{ github.event.label.name }})
 
          
