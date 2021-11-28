@@ -1,7 +1,7 @@
 on: pull_request
 jobs:
   curl:
-    if: ${{ contains(github.event.label.name, 'cc') }}
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
     runs-on: ubuntu-latest
     steps:
     - name: curl
