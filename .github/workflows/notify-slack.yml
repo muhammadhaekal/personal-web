@@ -1,12 +1,12 @@
 on: pull_request
 jobs:
   curl:
-    if: contains('${{ github.event.label.name }}', 'cc')
+    if: ${{ contains(github.event.label.name, 'cc') }}
     runs-on: ubuntu-latest
     steps:
     - name: curl
       uses: wei/curl@master
       with:
-        args: -X GET format('https://1148-139-192-23-51.ngrok.io/'', ${{ github.event.label.name }})
+        args: -X GET ${{ format('https://1148-139-192-23-51.ngrok.io/{0}', github.event.label.name) }}
 
          
