@@ -1,13 +1,14 @@
 on: pull_request
 jobs:
   curl:
-    env:
-      JOB_CONTEXT: ${{ toJSON(github.event.label.name) }}
-      JOB_CONTEXTS: ${{ toJSON(github.event.pull_request.labels) }}
-    run: echo "$JOB_CONTEXT $JOB_CONTEXTS"
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
+    # if: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
     runs-on: ubuntu-latest
     steps:
+    - name: Dump GitHub label
+      env:
+        JOB_CONTEXT: ${{ toJSON(github.event.label.name) }}
+        JOB_CONTEXTS: ${{ toJSON(github.event.pull_request.labels) }}
+      run: echo "$JOB_CONTEXT $JOB_CONTEXTS"
     - name: curl
       uses: wei/curl@master
       with:
