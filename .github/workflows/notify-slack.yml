@@ -4,11 +4,18 @@ jobs:
     # if: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
     runs-on: ubuntu-latest
     steps:
-    - name: Dump GitHub label
+    - name: Dump GitHub labels
       env:
-        JOB_CONTEXT: ${{ toJSON(github.event.label.name) }}
         JOB_CONTEXTS: ${{ toJSON(github.event.pull_request.labels) }}
-      run: echo "$JOB_CONTEXT $JOB_CONTEXTS"
+      run: echo "$JOB_CONTEXTS"
+    - name: Dump GitHub event
+      env:
+        CONTEXTS: ${{ toJSON(github.event) }}
+      run: echo "$CONTEXTS"
+    - name: Dump LOGIC
+      env:
+        LOGICC: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
+      run: echo "$LOGICC"
     - name: curl
       uses: wei/curl@master
       with:
