@@ -19,11 +19,11 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: | 
-            curl -X POST \
-              http://0a26-139-192-23-51.ngrok.io/repo/pull-request \
-              -H 'cache-control: no-cache' \
-              -H 'content-type: application/json' \
+        args: >
+              curl -X POST 
+              http://0a26-139-192-23-51.ngrok.io/repo/pull-request 
+              -H 'cache-control: no-cache' 
+              -H 'content-type: application/json' 
               -d '{"labels":[{"color":"957DBF","default":false,"description":"","id":3590964837,"name":"#cc-haekal-test","node_id":"LA_kwDODYQ4-s7WCcZl","url":"https://api.github.com/repos/muhammadhaekal/personal-web/labels/%23cc-haekal-test"},{"color":"957DBF","default":false,"description":"","id":3590964837,"name":"#cc-haekal-woi","node_id":"LA_kwDODYQ4-s7WCcZl","url":"https://api.github.com/repos/muhammadhaekal/personal-web/labels/%23cc-haekal-test"}]}'
 
          
