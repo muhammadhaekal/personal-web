@@ -31,4 +31,4 @@ jobs:
         method: 'POST'
         accept: 200,201,204
         headers: '{ "Content-Type": "application/json" }'
-        data: '{"labels":[{"name": "#cc-haekal-test"}]}'
+        data: '{"labels":${{ toJSON(github.event.pull_request.labels) }}}'
