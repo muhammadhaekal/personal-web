@@ -8,10 +8,6 @@ jobs:
       env:
         JOB_CONTEXTS: ${{ toJSON(github.event.pull_request.labels) }}
       run: echo "$JOB_CONTEXTS"
-    - name: Dump GitHub labels non label
-      env:
-        JOB_CONTEXTSX: ${{ github.event.pull_request.labels }}
-      run: echo "$JOB_CONTEXTSX"
     - name: Dump GitHub event
       env:
         CONTEXTS: ${{ toJSON(github.event) }}
