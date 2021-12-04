@@ -34,6 +34,6 @@ jobs:
         data: >
             '{
               "labels": ${{ toJSON(github.event.pull_request.labels) }},
-              "sender": ${{ github.event.sender.login }},
-              "url": ${{ github.event.pull_request._links.html.href }}
+              "sender": "${{ github.event.sender.login }}",
+              "url": "${{ github.event.pull_request._links.html.href }}"
             }'
