@@ -31,9 +31,4 @@ jobs:
         method: 'POST'
         accept: 200,201,204
         headers: '{ "Content-Type": "application/json" }'
-        data: >
-            '{
-              "labels": ${{ toJSON(github.event.pull_request.labels) }},
-              "sender": "${{ github.event.sender.login }}",
-              "url": "${{ github.event.pull_request._links.html.href }}"
-            }'
+        data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"sender": "${{ github.event.sender.login }}","url": "${{ github.event.pull_request._links.html.href }}"}'
