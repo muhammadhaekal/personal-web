@@ -20,7 +20,9 @@ jobs:
       uses: wei/curl@master
       with:
         args: >
-              '-X POST http://0a26-139-192-23-51.ngrok.io/repo/pull-request 
+              '
+              -X POST http://0a26-139-192-23-51.ngrok.io/repo/pull-request 
               -H 'cache-control: no-cache' 
               -H 'content-type: application/json' 
               -d '{"labels":${{ toJSON(github.event.pull_request.labels) }}'
+              '
