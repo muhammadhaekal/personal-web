@@ -8,6 +8,10 @@ jobs:
       env:
         JOB_CONTEXTS: ${{ toJSON(github.event.pull_request.labels) }}
       run: echo "$JOB_CONTEXTS"
+    - name: Dump GitHub labels non label
+      env:
+        JOB_CONTEXTSX: ${{ github.event.pull_request.labels }}
+      run: echo "$JOB_CONTEXTSX"
     - name: Dump GitHub event
       env:
         CONTEXTS: ${{ toJSON(github.event) }}
@@ -23,4 +27,4 @@ jobs:
               -X POST http://74c3-139-192-23-51.ngrok.io/repo/pull-request 
               -H 'cache-control: no-cache' 
               -H 'content-type: application/json' 
-              -d '{"labels":${{ toJSON(github.event.pull_request.labels) }} }'
+              -d '{"labels":${{ github.event.pull_request.labels }} }'
