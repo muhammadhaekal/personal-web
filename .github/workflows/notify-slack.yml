@@ -24,5 +24,5 @@ jobs:
               -X POST http://0a26-139-192-23-51.ngrok.io/repo/pull-request 
               -H 'cache-control: no-cache' 
               -H 'content-type: application/json' 
-              -d {"labels":{0}}',
+              -d '{"labels":{0}}',
               toJSON(github.event.pull_request.labels) }}
