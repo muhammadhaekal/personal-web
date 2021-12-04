@@ -19,7 +19,8 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: curl -X POST \
+        args: | 
+            curl -X POST \
               http://0a26-139-192-23-51.ngrok.io/repo/pull-request \
               -H 'cache-control: no-cache' \
               -H 'content-type: application/json' \
