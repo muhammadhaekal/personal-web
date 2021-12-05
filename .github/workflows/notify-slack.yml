@@ -16,19 +16,11 @@ jobs:
       env:
         LOGICC: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
       run: echo "$LOGICC"
-    # - name: curl
-    #   uses: wei/curl@master
-    #   with:
-    #     args: >
-    #           -X POST http://74c3-139-192-23-51.ngrok.io/repo/pull-request
-    #           -H 'cache-control: no-cache'
-    #           -H 'content-type: application/json'
-    #           -d '{"labels":[{"name": "#cc-haekal-test"}]}'
     - name: 'Call API'
       uses: actionsflow/axios@v1
       with:
-        url: http://74c3-139-192-23-51.ngrok.io/repo/pull-request
+        url: http://e487-139-192-23-51.ngrok.io/repo/pull-request
         method: 'POST'
         accept: 200,201,204
         headers: '{ "Content-Type": "application/json" }'
-        data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"sender": "${{ github.event.sender.login }}","url": "${{ github.event.pull_request._links.html.href }}"}'
+        data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"sender": "${{ github.event.sender.login }}","url":"${{ github.event.pull_request._links.html.href }}"}'
