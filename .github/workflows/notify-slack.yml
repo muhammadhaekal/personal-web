@@ -24,7 +24,7 @@ jobs:
       continue-on-error: true
       uses: actionsflow/axios@v1
       with:
-        url: http://3274-139-192-23-51.ngrok.io/pull-request
+        url: http://27de-139-192-23-51.ngrok.io/pull-request
         method: 'POST'
         accept: 200,201,204
         headers: '{ "Content-Type": "application/json" }'
@@ -33,7 +33,7 @@ jobs:
       name: 'Add approval reaction'
       uses: actionsflow/axios@v1
       with:
-        url: http://3274-139-192-23-51.ngrok.io/pull-request/reaction/approval-notif
+        url: http://27de-139-192-23-51.ngrok.io/pull-request/reaction/approval-notif
         method: 'POST'
         accept: 200,201,204
         headers: '{ "Content-Type": "application/json" }'
