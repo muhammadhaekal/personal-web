@@ -20,14 +20,14 @@ jobs:
       env:
         REVI: ${{ github.event.review.state == 'approved' }}
       run: echo "$REVI"
-    - name: 'Send notification to slack'
-      uses: actionsflow/axios@v1
-      with:
-        url: http://3274-139-192-23-51.ngrok.io/pull-request
-        method: 'POST'
-        accept: 200,201,204
-        headers: '{ "Content-Type": "application/json" }'
-        data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"sender": "${{ github.event.sender.login }}","url":"${{ github.event.pull_request._links.html.href }}","title":"${{ github.event.pull_request.title }}"}'
+    # - name: 'Send notification to slack'
+    #   uses: actionsflow/axios@v1
+    #   with:
+    #     url: http://3274-139-192-23-51.ngrok.io/pull-request
+    #     method: 'POST'
+    #     accept: 200,201,204
+    #     headers: '{ "Content-Type": "application/json" }'
+    #     data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"sender": "${{ github.event.sender.login }}","url":"${{ github.event.pull_request._links.html.href }}","title":"${{ github.event.pull_request.title }}"}'
     - name: 'Add approval reaction'
       uses: actionsflow/axios@v1
       with:
