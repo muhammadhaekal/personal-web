@@ -1,35 +1,7 @@
-on: [pull_request_review]
+on: [pull_request, pull_request_review]
 jobs:
   curl:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Dump GitHub labels
-      env:
-        JOB_CONTEXTS: ${{ toJSON(github.event.pull_request.labels) }}
-      run: echo "$JOB_CONTEXTS"
-    - name: Dump GitHub event
-      env:
-        CONTEXTS: ${{ toJSON(github.event) }}
-      run: echo "$CONTEXTS"
-    - name: Dump LOGIC
-      env:
-        LOGICC: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
-      run: echo "$LOGICC"
-    - name: Dump Review State
-      env:
-        REVI: ${{ github.event.review.state == 'approved' }}
-      run: echo "$REVI"
-    - name: 'Add approval reaction'
-      uses: actionsflow/axios@v1
-      with:
-        url: http://3274-139-192-23-51.ngrok.io/pull-request/reaction/approval-notif
-        method: 'POST'
-        accept: 200,201,204
-        headers: '{ "Content-Type": "application/json" }'
-        data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"url":"${{ github.event.pull_request._links.html.href }}"}'
-on: [pull_request]
-jobs:
-  curl:
+    # if: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
     runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub labels
@@ -49,6 +21,7 @@ jobs:
         REVI: ${{ github.event.review.state == 'approved' }}
       run: echo "$REVI"
     - name: 'Send notification to slack'
+      continue-on-error: true
       uses: actionsflow/axios@v1
       with:
         url: http://3274-139-192-23-51.ngrok.io/pull-request
@@ -56,3 +29,12 @@ jobs:
         accept: 200,201,204
         headers: '{ "Content-Type": "application/json" }'
         data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"sender": "${{ github.event.sender.login }}","url":"${{ github.event.pull_request._links.html.href }}","title":"${{ github.event.pull_request.title }}"}'
+    - if: ${{ github.event.review.state == 'approved' }}
+      name: 'Add approval reaction'
+      uses: actionsflow/axios@v1
+      with:
+        url: http://3274-139-192-23-51.ngrok.io/pull-request/reaction/approval-notif
+        method: 'POST'
+        accept: 200,201,204
+        headers: '{ "Content-Type": "application/json" }'
+        data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"url":"${{ github.event.pull_request._links.html.href }}"}'
