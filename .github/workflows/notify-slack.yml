@@ -1,4 +1,8 @@
-on: [push, pull_request_review]
+on: 
+  pull_request:
+    types: [labeled]
+  pull_request_review:
+    types: [submitted]
 jobs:
   curl:
     # if: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
