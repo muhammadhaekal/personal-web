@@ -2,7 +2,7 @@
 
 Live Demo: http://personal-web-hkl.netlify.com
 
-## Tech Stack
+## Tech Stacks
 
 - ReactJs
 - Redux
