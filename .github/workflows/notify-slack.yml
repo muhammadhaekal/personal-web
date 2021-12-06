@@ -1,4 +1,8 @@
-on: pull_request
+on: 
+  pull_request:
+    types: [labeled]
+  pull_request_review:
+    types: [submitted]
 jobs:
   curl:
     # if: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
@@ -16,11 +20,20 @@ jobs:
       env:
         LOGICC: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
       run: echo "$LOGICC"
-    - name: 'Call API'
+    - name: 'Send notification to slack'
       uses: actionsflow/axios@v1
       with:
-        url: http://e487-139-192-23-51.ngrok.io/repo/pull-request
+        url: http://3274-139-192-23-51.ngrok.io/repo/pull-request
         method: 'POST'
         accept: 200,201,204
         headers: '{ "Content-Type": "application/json" }'
         data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"sender": "${{ github.event.sender.login }}","url":"${{ github.event.pull_request._links.html.href }}","title":"${{ github.event.pull_request.title }}"}'
+    - name: 'Add approval reaction'
+      if: github.event.review.state == 'approved'
+      uses: actionsflow/axios@v1
+      with:
+        url: http://3274-139-192-23-51.ngrok.io/pull-request/reaction/approval-notif
+        method: 'POST'
+        accept: 200,201,204
+        headers: '{ "Content-Type": "application/json" }'
+        data: '{"labels": ${{ toJSON(github.event.pull_request.labels) }},"url":"${{ github.event.pull_request._links.html.href }}"}'
