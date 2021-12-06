@@ -16,6 +16,10 @@ jobs:
       env:
         LOGICC: ${{ contains(github.event.pull_request.labels.*.name, 'cc') }}
       run: echo "$LOGICC"
+    - name: Dump Review State
+      env:
+        REVI: ${{ (github.event.review.state == 'approved') }}
+      run: echo "$REVI"
     - name: 'Send notification to slack'
       uses: actionsflow/axios@v1
       with:
